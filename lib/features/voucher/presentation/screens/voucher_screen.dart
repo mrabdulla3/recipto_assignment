@@ -75,7 +75,6 @@ class VoucherScreen extends StatelessWidget {
               const SizedBox(height: 20),
 
               /// Amount Field
-              ///
               TextField(
                 keyboardType: TextInputType.number,
                 onChanged: controller.changeAmount,
@@ -86,6 +85,7 @@ class VoucherScreen extends StatelessWidget {
                   suffixText: "Max: ₹${voucher.maxAmount}",
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide(color: Colors.greenAccent),
                   ),
                 ),
               ),
@@ -108,7 +108,14 @@ class VoucherScreen extends StatelessWidget {
                   children: [
                     Column(
                       children: [
-                        const Text("YOU PAY"),
+                        const Text(
+                          "YOU PAY",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.grey,
+                            fontSize: 12,
+                          ),
+                        ),
                         Text(
                           "₹${controller.youPay.toStringAsFixed(2)}",
                           style: const TextStyle(
@@ -126,7 +133,14 @@ class VoucherScreen extends StatelessWidget {
                     ),
                     Column(
                       children: [
-                        const Text("SAVINGS"),
+                        const Text(
+                          "SAVINGS",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.grey,
+                            fontSize: 12,
+                          ),
+                        ),
                         Text(
                           "₹${controller.savings.toStringAsFixed(2)}",
                           style: const TextStyle(
@@ -168,7 +182,13 @@ class VoucherScreen extends StatelessWidget {
                                 ),
                                 child: Column(
                                   children: [
-                                    Text(e.method),
+                                    Text(
+                                      e.method,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black,
+                                      ),
+                                    ),
                                     Text(
                                       "${e.percent}% OFF",
                                       style: TextStyle(
@@ -195,7 +215,14 @@ class VoucherScreen extends StatelessWidget {
                     ),
                     child: Column(
                       children: [
-                        const Text("Quantity"),
+                        const Text(
+                          "Quantity",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.grey,
+                            fontSize: 12,
+                          ),
+                        ),
                         Row(
                           children: [
                             IconButton(
@@ -246,6 +273,8 @@ class VoucherScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20),
+
+              // Terms & Condition Buttons
               Row(
                 children: [
                   Expanded(
@@ -254,7 +283,7 @@ class VoucherScreen extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.black,
                         foregroundColor: Colors.white, // text color
-                        padding: const EdgeInsets.symmetric(vertical: 14),
+                        padding: const EdgeInsets.symmetric(vertical: 16),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30),
                         ),
@@ -269,7 +298,7 @@ class VoucherScreen extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.black,
                         foregroundColor: Colors.white,
-                        padding: const EdgeInsets.symmetric(vertical: 14),
+                        padding: const EdgeInsets.symmetric(vertical: 16),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30),
                         ),
